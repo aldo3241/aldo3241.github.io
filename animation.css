@@ -1,0 +1,49 @@
+.root{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+ul{
+  background-color: black; list-style-type: none; color: white; 
+  text-align: right; margin: 0; padding: 10px;;
+}
+.myprofile{
+  text-align: left;
+    font: bold;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover{
+  color: rgb(148, 148, 148);
+  transition: color 0.14s;
+}
+
+li a:active{
+  color:gray;
+}
+
+.background{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.content{
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+  padding: 10px ;
+}
