@@ -15,6 +15,12 @@ ul{
     font: bold;
 }
 
+.head{
+  background-color: black;
+  color: #f1f1f1;
+  text-decoration: none;
+  z-index: 10;
+}
 li a{
   color: white;
   text-decoration: none;
