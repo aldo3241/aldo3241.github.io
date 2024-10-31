@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALDO3241</title>
-  <link rel="stylesheet" href="animation.css">
-</head>
-<body class="root">
-  <ul>
-    <li style="text-align: left;">ALDO3241 </li>
-    <li> <a href="home.html"> HOME </a></li>
-    <li> <a href="aboutme.html"> ABOUT ME</a></li>
-    <li> <a href="Media.html"> MY PROJECT</a></li>
-  </ul>
-  <video autoplay muted loop class="background">
-    <source src="Material/background.webm">
-  </video>
+---
+layout: default
+title: Home
+---
 
-  <div class="content">
-  <h1> Home </h1>
-  <p style="text-align: left;"> This is my very first project in html and css im a newbie in here 
-    i want to improve my skill and my understanding of web beacuse i like programing stick around if you want to see my another project </p>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url | absolute_url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
   </div>
-</body>
-</html>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
